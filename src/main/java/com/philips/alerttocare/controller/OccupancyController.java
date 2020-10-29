@@ -66,7 +66,7 @@ public class OccupancyController {
 	
 	// delete status record
 	@DeleteMapping("occupancies/{id}")
-	public Map<String, Boolean> deleteStatus(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
+	public Map<String, Boolean> deleteOccupancy(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
 		Map<String, Boolean> response = new HashMap<>();
 		Occupancy occupancy = occupancyRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Occupancy record not found for this id ::" + id));

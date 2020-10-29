@@ -83,22 +83,6 @@ public class StaffDetailsJPAUnitTest {
 	      StaffDetails foundStaffDetails = repository.findById(2L).get();
 	      assertThat(foundStaffDetails).isEqualTo(staffdetail2);
 	  }
-	  
-	  @Test
-	  public void should_find_Designation_by_Name_containing_string() {
-		  
-		  StaffDetails staffdetails1 = new StaffDetails(1, "Harsha", "ha123" , "Doctor" , true);
-		  entityManager.persist(staffdetails1);
-
-		  StaffDetails staffdetails2 = new StaffDetails(2, "Pranay", "vasu123" , "Doctor" , true);
-		  entityManager.persist(staffdetails2);
-
-		  StaffDetails staffdetails3 = new StaffDetails(3, "Praveen", "pra123" , "Nurse" , false);
-		  entityManager.persist(staffdetails3);
-		  
-		  Iterable<StaffDetails> staffdetailsorials = repository.findByDesignationContaining("Nurse");
-		  assertThat(staffdetailsorials).hasSize(1).contains(staffdetails3);
-	  }
 	
 	  @Test
 	  public void should_update_staffdetail_by_id() {

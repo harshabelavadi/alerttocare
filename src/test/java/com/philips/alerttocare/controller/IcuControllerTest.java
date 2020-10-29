@@ -28,13 +28,14 @@ import com.philips.alerttocare.repository.IcuRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = IcuController.class)
-public class IcuControllerUnitTest {
+public class IcuControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
 	
 	@MockBean
 	private IcuController icucontroller;
+	
 	@MockBean
 	private IcuRepository icurepository;
 
@@ -65,7 +66,7 @@ public class IcuControllerUnitTest {
 	
 	
 	@Test
-	public void testGetIcutById() throws Exception {
+	public void testGetIcuById() throws Exception {
 		
 		Icu mockIcu1 = new Icu(1, "Icu 1");
 		int status = 0;

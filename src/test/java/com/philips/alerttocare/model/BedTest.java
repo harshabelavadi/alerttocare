@@ -21,7 +21,7 @@ import com.philips.alerttocare.repository.BedRepository;
  * addition, deletion of Bed entities on
  * repository and finding them by Id's
  */
-public class BedJPAUnitTest {
+public class BedTest {
 
 	  @Autowired
 	  private TestEntityManager entityManager;

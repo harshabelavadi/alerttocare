@@ -42,15 +42,6 @@ public class PatientController {
 		return ResponseEntity.ok().body(patient);
 	}
 	
-	// get patient by name
-	@GetMapping("patients/{name}")
-	public List<Patient> getPatientByName(@PathVariable(value = "name") String name) {
-		
-		List<Patient> patients = patientRepository.findByNameContaining(name);
-		return patients;
-		
-	}
-
 	// save patient record
 	@PostMapping("patients")
 	public Patient createPatient(@RequestBody Patient patient) {

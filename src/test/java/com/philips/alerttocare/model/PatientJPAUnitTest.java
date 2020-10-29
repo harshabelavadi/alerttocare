@@ -85,21 +85,6 @@ public class PatientJPAUnitTest {
 	    assertThat(foundPatient).isEqualTo(patient2);
 	  }
 	  
-	  @Test
-	  public void should_find_patients_by_Name_containing_string() {
-		  
-		  Patient patient1 = new Patient(1, "#patient1", "#pataddress1" , 28 , "male" , "9885827367" ,null);
-		  entityManager.persist(patient1);
-
-		  Patient patient2 = new Patient(2, "#patientname2", "#pataddress2" , 21 , "female" , "988988582" ,null);
-		  entityManager.persist(patient2);
-
-		  Patient patient3 = new Patient(3, "#patientname3", "#pataddress3" , 23 , "female" , "9059343595" , null);
-		  entityManager.persist(patient3);
-
-		  Iterable<Patient> patients = repository.findByNameContaining("name");
-		  assertThat(patients).hasSize(2).contains(patient2, patient3);
-	  }
 	
 	  @Test
 	  public void should_update_patient_by_id() {

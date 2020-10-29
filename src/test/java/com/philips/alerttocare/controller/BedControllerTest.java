@@ -29,7 +29,7 @@ import com.philips.alerttocare.repository.BedRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = BedController.class)
-public class BedControllerUnitTest {
+public class BedControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;

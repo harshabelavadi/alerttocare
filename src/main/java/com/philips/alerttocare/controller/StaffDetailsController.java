@@ -36,21 +36,12 @@ public class StaffDetailsController {
 	
 	// get staff details by user id
 	@GetMapping("staffdetails/{id}")
-	public ResponseEntity<StaffDetails> getStaffDetailsByUsername(@PathVariable(value = "id") Long id) throws ResourceNotFoundException{
+	public ResponseEntity<StaffDetails> getStaffDetailsById(@PathVariable(value = "id") Long id) throws ResourceNotFoundException{
 		StaffDetails staffDetails = staffDetailsRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Staff details record not found for this id ::" + id));
 		return ResponseEntity.ok().body(staffDetails);
 	}
 	
-	// get staff details by name
-	@GetMapping("staffdetails/{designation}")
-	public List<StaffDetails> getPatientByName(@PathVariable(value = "designation") String designation) {
-			
-		List<StaffDetails> staffdetails = staffDetailsRepository.findByDesignationContaining(designation);
-		return staffdetails;
-			
-	}
-
 	// save staff details record
 	@PostMapping("staffdetails")
 	public StaffDetails createStaffDetails(@RequestBody StaffDetails staffDetails) {
