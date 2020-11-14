@@ -11,12 +11,15 @@ jobs:
         uses: harmon758/postgresql-action@v1.0.0
         with:
           postgresql version: '13'
+          postgresql db: alerttocaredb
           postgresql user: postgres
           postgresql password: postgres
-      - name: Check Postgres running
-        run: |
+      - name: Check Dev Postgres running
+        run:
           sleep 10s
           PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"    
+      - name: Check Test Postgres running
+        run:
           sleep 10s
           PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare_test"
       - uses: actions/checkout@v2
