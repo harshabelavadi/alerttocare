@@ -1,9 +1,11 @@
 Prerequisites:
 
 Pgadmin Database make sure you have correct database name username and password 
-and port(usually 5432) is free[it can be checked using command -> netstat -ano | findstr "port_number"]
+and port(usually 5432) is free[it can be checked using command -> netstat -ano | findstr "port_number"], 
+if the port is being used by some other process then either use different port number which is free or 
+terminate the process that is using port number 5432. 
 
-Run Pgadmin, go to pgadmin and create database named “alerttocare”.
+Run Pgadmin, go to pgadmin and create two databases, one for development named “alerttocare” and another for testing named "alerttocare_testdb".
 
 Extract the project to a folder. Import it as maven project. Do maven clean and maven install,  after that maven build.
 
