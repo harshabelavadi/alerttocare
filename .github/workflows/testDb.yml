@@ -1,0 +1,21 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: PostgresSQL setup
+        uses: harmon758/postgresql-action@v1.0.0
+        with:
+          postgresql version: '13'
+          postgresql db: alerttodb
+          postgresql user: postgres
+          postgresql password: postgres
+      - name: Check Postgres running
+        run: |
+          sleep 10s
+          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare_test"
+      - uses: actions/checkout@v2
