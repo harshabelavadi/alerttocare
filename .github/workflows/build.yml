@@ -14,6 +14,13 @@ jobs:
           postgresql db: alerttodb
           postgresql user: postgres
           postgresql password: postgres
+      - name: PostgresSQL setup
+        uses: harmon758/postgresql-action@v1.0.0
+        with:
+          postgresql version: '13'
+          postgresql db: alerttodb_test
+          postgresql user: postgres
+          postgresql password: postgres
       - name: Check Postgres running
         run: |
           sleep 10s
