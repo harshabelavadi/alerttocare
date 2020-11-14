@@ -17,7 +17,8 @@ jobs:
       - name: Check Dev Postgres running
         run:
           sleep 10s
-          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"    
+          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"
+      - uses: actions/checkout@v2    
       - name: Check Test Postgres running
         run:
           sleep 10s
