@@ -18,13 +18,7 @@ jobs:
         run:
           sleep 10s
           PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"
-      - uses: actions/checkout@v2    
-      - name: Check Test Postgres running
-        run:
-          sleep 10s
-          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare_test"
-      - uses: actions/checkout@v2
-  
+      - uses: actions/checkout@v2      
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
