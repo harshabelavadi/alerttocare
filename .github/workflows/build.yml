@@ -11,24 +11,12 @@ jobs:
         uses: harmon758/postgresql-action@v1.0.0
         with:
           postgresql version: '13'
-          postgresql db: alerttodb
           postgresql user: postgres
           postgresql password: postgres
       - name: Check Postgres running
         run: |
           sleep 10s
-          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"
-      - uses: actions/checkout@v2
-      
-      - name: PostgresSQL Test setup
-        uses: harmon758/postgresql-action@v1.0.0
-        with:
-          postgresql version: '13'
-          postgresql db: alerttodb_test
-          postgresql user: postgres
-          postgresql password: postgres
-      - name: Check Postgres running
-        run: |
+          PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare"    
           sleep 10s
           PGPASSWORD=postgres psql -U postgres -h localhost -p 5432 -c "create database alerttocare_test"
       - uses: actions/checkout@v2
